@@ -26,5 +26,15 @@ RSpec.describe TddLogic do
        expect(result).to eq(7)
      end
 
+      it 'will returns 8 for an string' do
+       result = TddLogic.add("1,2,2,3")
+       expect(result).to eq(8)
+      end
+
+       it 'will return error for negative numbers in string' do
+        result = TddLogic.add("1,-2,3,-5,-6")
+        expect(result).to eq("negative numbers are not allowed -2, -5, -6")
+     end
+
    end
 end
