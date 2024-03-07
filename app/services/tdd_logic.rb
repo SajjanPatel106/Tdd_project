@@ -5,6 +5,7 @@ class TddLogic
       num = num_string.split(',').map(&:to_i).select { |num| num < 0 }.join(", ")
       return "negative numbers are not allowed #{num}"
     end
+    return "invalid" if num_string.split(',').include?('\n') # when string contain \n
     numbers = num_string.split(',').map(&:to_i).inject(0,:+) # sum of numbers
 
   end
