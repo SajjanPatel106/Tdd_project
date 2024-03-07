@@ -10,5 +10,16 @@ RSpec.describe TddLogic do
        puts "returns only 0 for an empty string"
      end
 
+     it 'returns one for a string' do
+       result = TddLogic.add("1")
+       expect(result).to eq(1)
+       puts "returns 1 for an empty string"
+     end
+
+     it 'returns summation for an string' do
+       result = TddLogic.add("0,4")
+       expect(result).to eq(4)
+     end
+
    end
 end
