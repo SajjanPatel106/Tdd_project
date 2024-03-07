@@ -21,5 +21,10 @@ RSpec.describe TddLogic do
        expect(result).to eq(4)
      end
 
+      it 'will return 7 for an string' do
+       result = TddLogic.add("1,1,5")
+       expect(result).to eq(7)
+     end
+
    end
 end
