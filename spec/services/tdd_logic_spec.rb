@@ -36,9 +36,9 @@ RSpec.describe TddLogic do
         expect(result).to eq("negative numbers are not allowed -2, -5, -6")
       end
 
-      it 'will return 9 for an \n string' do
-       result = TddLogic.add('1\n4,8\n8')
-       expect(result).to eq(9)
+      it 'will return 20 for an \n string' do
+       result = TddLogic.add('2\n4,6\n8')
+       expect(result).to eq(20)
       end
 
       it 'will return invalid for an empty string' do
@@ -46,7 +46,16 @@ RSpec.describe TddLogic do
        expect(result).to eq('invalid')
       end
 
-      
+      it 'returns summation of number for string' do
+       result = TddLogic.add('//;\n1;2;4')
+       expect(result).to eq(7)
+      end
+
+      it 'returns summation of and not include number >1000' do
+       result = TddLogic.add('2,1001')
+       expect(result).to eq(2)
+      end
+
 
    end
 end
