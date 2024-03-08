@@ -61,6 +61,16 @@ RSpec.describe TddLogic do
        expect(result).to eq(6)
       end
 
+      it 'will returns exception for negative numbers' do
+       result = TddLogic.add('1,-2\n,-3,\n')
+       expect(result).to eq("negative numbers are not allowed -2, -3")
+      end
+
+      it 'returns summation when string inludes multiple delimiters' do
+       result = TddLogic.add('//[*][%]\n1*2%3')
+       expect(result).to eq(6)
+      end
+
 
    end
 end

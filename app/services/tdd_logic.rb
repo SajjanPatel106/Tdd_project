@@ -11,6 +11,7 @@ class TddLogic
     return "invalid" if num_string.split(',').include?('\n') # when string contain \n
     numbers = num_string.split("\;").map {|x| x[/\d+/]}.map(&:to_i) if num_string.start_with?("//") # code for delimeter
     numbers = num_string.split("*").map {|x| x[/\d+/]}.map(&:to_i) if num_string.include?('*')
+    numbers = num_string.gsub(/[!@#%&*]/,',').split(",").map {|x| x[/\d+/]}.map(&:to_i) if num_string.include?('[*][%]')
 
     numbers.sum
   end
