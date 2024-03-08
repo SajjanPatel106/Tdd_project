@@ -56,6 +56,11 @@ RSpec.describe TddLogic do
        expect(result).to eq(2)
       end
 
+      it 'returns sumation for string includes *' do
+       result = TddLogic.add('/[***]\n1***2***3')
+       expect(result).to eq(6)
+      end
+
 
    end
 end
